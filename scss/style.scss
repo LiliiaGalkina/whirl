@@ -1,0 +1,296 @@
+//переменные
+$font-color-main: #1f1f1f;
+$font-color-white: #ffffff;
+$font-color-menu: #33383f;
+$font-color-light: #626a72;
+$color-blue: #0070a0;
+$bg-hero-decor: #def2f7;
+$bg-block-first: #faea73;
+$bg-block-second: #cceff6;
+$bg-block-third: #f7cedc;
+$bg-block-grey: #f7f9fa;
+$bg-block-started: #e6f7ff;
+
+//mixins
+
+@mixin button-blue($width, $height) {
+  width: $width;
+  height: $height;
+  display: flex;
+  background-color: $color-blue;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $font-color-white;
+  transition: all 0.5s ease;
+
+  &:hover {
+    //box-shadow: 0 0 1rem $color-blue;
+    transform: scale(1.04);
+  }
+}
+
+@mixin link-blue($font-size) {
+  font-size: $font-size;
+  line-height: 160%;
+  color: $color-blue;
+  transition: all 0.5s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin title-style($font-size, $margin-bottom) {
+  margin-bottom: $margin-bottom;
+  font-family: "Fraunces", serif;
+  font-size: $font-size;
+  line-height: 110%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.02rem;
+  color: $font-color-main;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 116rem;
+  padding: 0 1.5rem;
+}
+
+.block {
+    &__img {
+        margin-bottom: 0.8rem;
+    }
+    &__title {
+        @include title-style(2.5rem, 1.1rem)
+    }
+    &__text {
+        font-size: 1.5rem;
+        line-height: 160%;
+    }
+}
+
+//HEADER
+.header {
+  padding: 1.95rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__navigation
+
+  &__navigation {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  // .header__logo
+
+  &__logo {
+    margin-right: 4rem;
+  }
+
+  // .header__buttons
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  // .header__link
+
+  &__link {
+    @include link-blue(1.5rem);
+    margin-right: 2rem;
+  }
+
+  // .header__button
+
+  &__button {
+    @include button-blue(13.9rem, 3.6rem);
+  }
+}
+
+.logo {
+  max-width: 10.6rem;
+  img {
+    width: 100%;
+  }
+}
+
+.menu {
+  // .menu__list
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  // .menu__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    font-size: 1.5rem;
+    line-height: 160%;
+    transition: all 0.5s ease;
+    color: $font-color-menu;
+
+    &:hover {
+      color: $color-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+//HERO
+
+.hero {
+  padding: 9rem 0 4.02rem;
+  // .hero__items
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .hero__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  // .hero__title
+
+  &__title {
+    @include title-style(5.8rem, 2.1rem);
+    max-width: 48.5rem;
+  }
+
+  // .hero__text
+
+  &__text {
+    margin-bottom: 2.9rem;
+    max-width: 35.1rem;
+    font-size: 2rem;
+    line-height: 150%;
+  }
+
+  // .hero__buttons
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  // .hero__button
+
+  &__button {
+    @include button-blue(17.4rem, 4.3rem);
+    margin-right: 2.4rem;
+  }
+
+  // .hero__link
+
+  &__link {
+    @include link-blue(1.7rem);
+    display: flex;
+    p {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+//COMPANIES
+
+.companies {
+    margin-bottom: 16rem;
+    padding: 4rem 0 0;
+		// .companies__text
+
+		&__text {
+            margin-bottom: 2.36rem;
+            font-size: 2.4rem;
+            line-height: 156%;
+            text-align: center;
+		}
+
+		// .companies__items
+
+		&__items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
+            justify-items: center;
+            column-gap: 6rem;
+        }
+}
+
+//benefits
+
+.benefits {
+    margin-bottom: 11.96rem;
+		// .benefits__items
+
+		&__items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3.2rem;
+		}
+
+		// .benefits__item
+
+		&__item {
+            padding: 3.2rem 3.2rem 4rem;
+			// .benefits__item_yellow
+
+			&_yellow {
+                background-color: $bg-block-first;
+			}
+
+			// .benefits__item_blue
+
+			&_blue {
+                background-color: $bg-block-second;
+			}
+
+			// .benefits__item_rose
+
+			&_rose {
+                background-color: $bg-block-third;
+			}
+		}
+}
+
+.block {
+
+		// .block__img
+
+		&__img {
+		}
+
+		// .block__title
+
+		&__title {
+		}
+
+		// .block__text
+
+		&__text {
+		}
+}
