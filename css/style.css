@@ -13,6 +13,9 @@ body {
 .block__img {
   margin-bottom: 0.8rem;
 }
+.block__img_none {
+  opacity: 0;
+}
 .block__title {
   margin-bottom: 1.1rem;
   font-family: "Fraunces", serif;
@@ -204,20 +207,24 @@ body {
 .getrelaxing__items {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .getrelaxing__item:not(:last-child) {
   margin-right: 2rem;
 }
 
+.text-block {
+  padding-top: 2.75rem;
+}
 .text-block__item {
+  width: 48.58rem;
   padding: 1.7rem 1.2rem;
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 0.1rem solid #C2CDD8;
+  border-bottom: 0.1rem solid #c2cdd8;
 }
 .text-block__item:first-child {
-  border-top: 0.1rem solid #C2CDD8;
+  border-top: 0.1rem solid #c2cdd8;
 }
 .text-block__item-img {
   margin-right: 1.6rem;
@@ -229,6 +236,7 @@ body {
 .text-block__item-info {
   margin-right: 1.6rem;
   max-width: 36rem;
+  flex-grow: 2;
 }
 .text-block__item-title {
   margin-bottom: 1.8rem;
@@ -240,10 +248,82 @@ body {
   font-size: 1.6rem;
   line-height: 150%;
 }
+.text-block__item-text_none {
+  display: none;
+}
 .text-block__item-arrow {
   max-width: 1.8rem;
+  justify-self: end;
   cursor: pointer;
 }
 .text-block__item-arrow img {
   width: 100%;
+}
+
+.about {
+  padding: 12.04rem 0 11.96rem;
+}
+.about__items {
+  display: flex;
+  justify-content: space-between;
+}
+.about__item-title {
+  margin-right: 2rem;
+  max-width: 30rem;
+}
+.about__title {
+  margin-bottom: 0;
+  font-family: "Fraunces", serif;
+  font-size: 4.2rem;
+  line-height: 110%;
+}
+.about__item-blocks {
+  max-width: 73.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+}
+.banner {
+  padding: 8rem 0 9.2rem;
+  background-color: #0070a0;
+  color: #ffffff;
+}
+.banner__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner__item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.banner-info__title {
+  margin-bottom: 1.8rem;
+  font-family: "Fraunces", serif;
+  font-size: 4.2rem;
+  line-height: 110%;
+  max-width: 40.3rem;
+}
+.banner-info__text {
+  margin-bottom: 1.7rem;
+  max-width: 48rem;
+  font-size: 1.8rem;
+  line-height: 150%;
+}
+.banner-info__list {
+  margin-bottom: 2.8rem;
+}
+.banner-info__item {
+  padding-left: 2.5rem;
+  font-size: 1.6rem;
+  background-image: url("../img/banner-check.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+.banner-info__item:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+.banner-info__text-demo {
+  font-size: 1.7rem;
+  line-height: 159%;
 }
