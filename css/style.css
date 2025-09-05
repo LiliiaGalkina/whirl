@@ -283,6 +283,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 3.2rem;
 }
+
 .banner {
   padding: 8rem 0 9.2rem;
   background-color: #0070a0;
